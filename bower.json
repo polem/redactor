@@ -1,0 +1,25 @@
+{
+    "name": "redactor",
+    "version": "10.2.2",
+    "authors": [
+        "Imperavi <support@imperavi.com>"
+    ],
+    "homepage" : "http://imperavi.com/redactor",
+    "private" : true,
+    "main": [
+      "dist/redactor.js",
+      "dist/redactor.css"
+    ],
+    "license": "http://imperavi.com/redactor/license",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "gulpfile.js",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+      "jquery": ">=1.9.1"
+    }
+}
