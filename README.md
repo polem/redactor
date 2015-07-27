@@ -1,5 +1,5 @@
 # redactor
-`redactor wysiwyg personal mirror`
+redactor wysiwyg personal mirror
 
 ## install with bower
 
