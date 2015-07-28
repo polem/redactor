@@ -1,21 +1,36 @@
 var argv = require('yargs').argv;
 var gulp = require('gulp');
 var remoteSrc = require('gulp-remote-src');
+var request = require('request').defaults({jar: true});
+var prompt = require('prompt');
+var source = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
+var runSequence = require('run-sequence');
+var fs = require('fs');
 
 
 var $ = require('gulp-load-plugins', 'uglify-save-license')({
   pattern: ['gulp-*', 'del']
 });
 
-// define tasks here
-gulp.task('update', ['downloadPlugins', 'downloadLangs'], function(){
-  var file = argv.file;
-  var filter = $.filter(['*', '!index.html', '!redactor.min.js', '!redactor.less', '!redactor']);
+gulp.task('update',  ['downloadPlugins', 'downloadLangs'], function(cb) {
 
-  gulp.src(file, { base: "./" })
-    .pipe($.decompress({ strip: 1 }))
-    .pipe(filter)
-    .pipe(gulp.dest('./src'));
+  prompt.get(['user_email', 'user_password'], function (err, result) {
+    request.post('http://imperavi.com/webAjax/users/main/login/', {form:{
+      user_password: result.user_password,
+      user_email: result.user_email
+    }}, function (err, httpResponse, body) {
+      var filter = $.filter(['*', '!index.html', '!redactor.min.js', '!redactor.less', '!redactor']);
+
+      request('http://imperavi.com/webdownload/redactor/get')
+        .pipe(source('redactor.zip'))
+        .pipe(buffer())
+        .pipe($.decompress({ strip: 1 }))
+        .pipe(filter)
+        .pipe(gulp.dest('./src'))
+        .on("finish", cb);
+    });
+  });
 });
 
 gulp.task('optimize', function() {
@@ -98,8 +113,27 @@ gulp.task('tag', function() {
   return gulp.src(['./bower.json']).pipe($.tagVersion());
 });
 
+gulp.task('push', function() {
+  return $.git.push('origin', 'master', {args: " --tags"}, function (err) {
+    if (err) throw err;
+  });
+});
+
+gulp.task('commit', function(){
+  return gulp.src(['./src/', './dist/', 'bower.json']).pipe($.git.commit('update redactor to new version',  function (err) {
+    if (err) throw err;
+  }));
+});
+
 // define tasks here
-gulp.task('default', function(){
+gulp.task('default', function(callback) {
+  runSequence(
+    'update',
+    'optimize',
+    'commit',
+    'tag',
+    'push',
+  callback);
   // run tasks here
   // set up watch handlers here
 });
