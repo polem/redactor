@@ -1,1 +1,70 @@
-!function(e){e.Redactor.opts.langs.eo={html:"HTML",video:"Enŝovu videon...",image:"Enŝovu bildon...",table:"Tabelo",link:"Ligu",link_insert:"Enŝovu ligilon ...",link_edit:"Edit link",unlink:"Malligu",formatting:"Tekstaranĝo",paragraph:"Paragrafo",quote:"Citaĵo",code:"Kodo",header1:"Kapo 1",header2:"Kapo 2",header3:"Kapo 3",header4:"Kapo 4",header5:"Kapo 5",bold:"Grasa",italic:"Kursiva",fontcolor:"Tipara koloro",backcolor:"Fona koloro",unorderedlist:"Malorda listo",orderedlist:"Orda listo",outdent:"Malkrommarĝenu",indent:"Krommarĝenu",cancel:"Rezignu",insert:"Enŝovu",save:"Konservu",_delete:"Forigu",insert_table:"Enŝovu tabelon...",insert_row_above:"Enŝovu vicon supren",insert_row_below:"Enŝovu vicon malsupren",insert_column_left:"Enŝovu kolumnon maldekstren",insert_column_right:"Enŝovu kolumnon dekstren",delete_column:"Forigu kolumnon",delete_row:"Forigu vicon",delete_table:"Forigu tabelon",rows:"Vicoj",columns:"Kolumnoj",add_head:"Enŝovu kapon",delete_head:"Forigu kapon",title:"Titolo",image_position:"Bildloko",none:"Neniu",left:"Maldekstra",right:"Dekstra",image_web_link:"Bilda hiperligilo",text:"Teksto",mailto:"Retpoŝto",web:"URL",video_html_code:"Videa enkorpigita kodo",file:"Enŝovu dosieron...",upload:"Alŝutu",download:"Elŝutu",choose:"Elektu",or_choose:"Aŭ elektu",drop_file_here:"Demetu dosieron ĉi tien",align_left:"Ĝisrandigu maldekstren",align_center:"Centrigu",align_right:"Ĝisrandigu dekstren",align_justify:"Ĝisrandigu",horizontalrule:"Enŝovu horizontalan linion",fullscreen:"Plenekrana",deleted:"Foriga",anchor:"Ankro",link_new_tab:"Malfermu hiperligilon en novan langeton",underline:"Substrekita",alignment:"Ĝisrandigo",filename:"Dosiernomo (fakultativa)",edit:"Redaktu",center:"Center",upload_label:"Drop file here or "}}(jQuery);
+!function(e){e.Redactor.opts.langs.eo={html:"HTML",// substantive
+video:"Enŝovu videon...",// imperative
+image:"Enŝovu bildon...",// imperative
+table:"Tabelo",// substantive
+link:"Ligu",// imperative
+link_insert:"Enŝovu ligilon ...",// imperative
+link_edit:"Edit link",unlink:"Malligu",// imperative
+formatting:"Tekstaranĝo",// substantive
+paragraph:"Paragrafo",// substantive
+quote:"Citaĵo",// substantive
+code:"Kodo",// substantive
+header1:"Kapo 1",// substantive
+header2:"Kapo 2",// substantive
+header3:"Kapo 3",// substantive
+header4:"Kapo 4",// substantive
+header5:"Kapo 5",// substantive
+bold:"Grasa",// adjective
+italic:"Kursiva",// adjective
+fontcolor:"Tipara koloro",// substantive
+backcolor:"Fona koloro",// substantive
+unorderedlist:"Malorda listo",// substantive
+orderedlist:"Orda listo",// substantive
+outdent:"Malkrommarĝenu",// imperative
+indent:"Krommarĝenu",// imperative
+cancel:"Rezignu",// imperative
+insert:"Enŝovu",// imperative
+save:"Konservu",// imperative
+_delete:"Forigu",// imperative
+insert_table:"Enŝovu tabelon...",// imperative
+insert_row_above:"Enŝovu vicon supren",// imperative
+insert_row_below:"Enŝovu vicon malsupren",// imperative
+insert_column_left:"Enŝovu kolumnon maldekstren",// imperative
+insert_column_right:"Enŝovu kolumnon dekstren",// imperative
+delete_column:"Forigu kolumnon",// imperative
+delete_row:"Forigu vicon",// imperative
+delete_table:"Forigu tabelon",// imperative
+rows:"Vicoj",// substantive (plural)
+columns:"Kolumnoj",// substantive (plural)
+add_head:"Enŝovu kapon",// imperative
+delete_head:"Forigu kapon",// imperative
+title:"Titolo",// substantive
+image_position:"Bildloko",// substantive
+none:"Neniu",// determiner
+left:"Maldekstra",// adjective
+right:"Dekstra",// adjective
+image_web_link:"Bilda hiperligilo",// substantive
+text:"Teksto",// substantive
+mailto:"Retpoŝto",// substantive
+web:"URL",// substantive
+video_html_code:"Videa enkorpigita kodo",// substantive
+file:"Enŝovu dosieron...",// imperative
+upload:"Alŝutu",// imperative
+download:"Elŝutu",// imperative
+choose:"Elektu",// imperative
+or_choose:"Aŭ elektu",// imperative
+drop_file_here:"Demetu dosieron ĉi tien",// imperative
+align_left:"Ĝisrandigu maldekstren",// imperative
+align_center:"Centrigu",// imperative
+align_right:"Ĝisrandigu dekstren",// imperative
+align_justify:"Ĝisrandigu",// imperative
+horizontalrule:"Enŝovu horizontalan linion",// imperative
+fullscreen:"Plenekrana",// adjective
+deleted:"Foriga",// adjective
+anchor:"Ankro",// substantive
+link_new_tab:"Malfermu hiperligilon en novan langeton",// imperative
+underline:"Substrekita",// adjective
+alignment:"Ĝisrandigo",// substantive
+filename:"Dosiernomo (fakultativa)",// substantive
+edit:"Redaktu",// imperative
+center:"Center",upload_label:"Drop file here or "}}(jQuery);
