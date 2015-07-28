@@ -5,6 +5,6 @@ redactor wysiwyg personal mirror
 
 `bower install polem/redactor#v10.2.2`
 
-## update from zip file
+## update git repo
 
-`gulp update -f redactor.zip && gulp optimize && gulp tag`
+`gulp`
