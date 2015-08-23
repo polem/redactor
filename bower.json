@@ -1,14 +1,14 @@
 {
     "name": "redactor",
-    "version": "10.2.2",
+    "version": "10.2.3",
     "authors": [
         "Imperavi <support@imperavi.com>"
     ],
-    "homepage" : "http://imperavi.com/redactor",
-    "private" : true,
+    "homepage": "http://imperavi.com/redactor",
+    "private": true,
     "main": [
-      "dist/redactor.js",
-      "dist/redactor.css"
+        "dist/redactor.js",
+        "dist/redactor.css"
     ],
     "license": "http://imperavi.com/redactor/license",
     "ignore": [
@@ -20,6 +20,6 @@
         "tests"
     ],
     "dependencies": {
-      "jquery": ">=1.9.1"
+        "jquery": ">=1.9.1"
     }
 }
