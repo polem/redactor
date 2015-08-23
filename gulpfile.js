@@ -120,7 +120,7 @@ gulp.task('push', function() {
 });
 
 gulp.task('commit', function(){
-  return gulp.src(['./src/', './dist/', 'bower.json']).pipe($.git.commit('update redactor to new version',  function (err) {
+  return gulp.src(['./src/**/*', './dist/**/*', 'bower.json']).pipe($.git.commit('update redactor to new version',  function (err) {
     if (err) throw err;
   }));
 });
@@ -130,6 +130,7 @@ gulp.task('default', function(callback) {
   runSequence(
     'update',
     'optimize',
+    'updateBowerJson',
     'commit',
     'tag',
     'push',
