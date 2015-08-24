@@ -9,8 +9,8 @@ var runSequence = require('run-sequence');
 var fs = require('fs');
 
 
-var $ = require('gulp-load-plugins', 'uglify-save-license')({
-  pattern: ['gulp-*', 'del']
+var $ = require('gulp-load-plugins')({
+  pattern: ['gulp-*', 'del', 'uglify-save-license']
 });
 
 gulp.task('update',  ['downloadPlugins', 'downloadLangs'], function(cb) {
