@@ -13,26 +13,6 @@ var $ = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'del', 'uglify-save-license']
 });
 
-gulp.task('update',  ['downloadPlugins', 'downloadLangs'], function(cb) {
-
-  prompt.get(['user_email', 'user_password'], function (err, result) {
-    request.post('http://imperavi.com/webAjax/users/main/login/', {form:{
-      user_password: result.user_password,
-      user_email: result.user_email
-    }}, function (err, httpResponse, body) {
-      var filter = $.filter(['*', '!index.html', '!redactor.min.js', '!redactor.less', '!redactor']);
-
-      request('http://imperavi.com/webdownload/redactor/get')
-        .pipe(source('redactor.zip'))
-        .pipe(buffer())
-        .pipe($.decompress({ strip: 1 }))
-        .pipe(filter)
-        .pipe(gulp.dest('./src'))
-        .on("finish", cb);
-    });
-  });
-});
-
 gulp.task('optimize', function() {
   var jsFilter = $.filter('**/*.js');
   var cssFilter = $.filter('**/*.css');
@@ -109,31 +89,11 @@ gulp.task('updateBowerJson', function(cb) {
 
 });
 
-gulp.task('tag', function() {
-  return gulp.src(['./bower.json']).pipe($.tagVersion());
-});
-
-gulp.task('push', function() {
-  return $.git.push('origin', 'master', {args: " --tags"}, function (err) {
-    if (err) throw err;
-  });
-});
-
-gulp.task('commit', function(){
-  return gulp.src(['./src/**/*', './dist/**/*', 'bower.json']).pipe($.git.commit('update redactor to new version',  function (err) {
-    if (err) throw err;
-  }));
-});
-
 // define tasks here
 gulp.task('default', function(callback) {
   runSequence(
-    'update',
     'optimize',
     'updateBowerJson',
-    'commit',
-    'tag',
-    'push',
   callback);
   // run tasks here
   // set up watch handlers here
