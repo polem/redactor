@@ -70,6 +70,6 @@ $.Redactor.opts.langs['fr'] = {
 	filename: 'Nom de fichier (optionnel)',
 	edit: 'Edit',
 	center: 'Center',
-	upload_label: 'Drop file here or '
+	upload_label: 'Déposez le fichier ici ou '
 };
 })( jQuery );
